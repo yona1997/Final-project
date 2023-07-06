@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <title>Property Forecast Model</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap" rel="stylesheet">
+    <style>
+      label {
+        display: block;
+      }
+      body {
+        font-family: 'Heebo Light', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login">
+      <h1>Property Forecast</h1>
+      <h2>Enter the property data:</h2>
+      <form id="measurement-form" action="{{ url_for('predict') }}" method="post">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required><br><br>
+        
+        <label for="type">Type:</label>
+        <input type="text" id="type" name="type" required><br><br>
+        
+        <label for="room_number">Room Number:</label>
+        <input type="text" id="room_number" name="room_number" required><br><br>
+        
+        <label for="area">Area:</label>
+        <input type="text" id="area" name="area" required><br><br>
+        
+        <label for="hasElevator">Has Elevator:</label>
+        <select id="hasElevator" name="hasElevator">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select><br><br>
+        
+        <label for="hasParking">Has Parking:</label>
+        <select id="hasParking" name="hasParking">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select><br><br>
+        
+        <label for="hasBars">Has Bars:</label>
+        <select id="hasBars" name="hasBars">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select><br><br>
+        
+        <label for="hasStorage">Has Storage:</label>
+        <select id="hasStorage" name="hasStorage">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select><br><br>
+        
+        <label for="hasAirCondition">Has Air Condition:</label>
+        <select id="hasAirCondition" name="hasAirCondition">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select><br><br>
+        
+        <label for="hasBalcony">Has Balcony:</label>
+        <select id="hasBalcony" name="hasBalcony">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select><br><br>
+        
+        <label for="hasMamad">Has Mamad:</label>
+        <select id="hasMamad" name="hasMamad">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select><br><br>
+        
+        <label for="handicapFriendly">Handicap Friendly:</label>
+        <select id="handicapFriendly" name="handicapFriendly">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </select><br><br>
+        
+        <label for="publishedDays">Published Days:</label>
+        <input type="text" id="publishedDays" name="publishedDays" required><br><br>
+        
+        <label for="floor_out_of">Floor Out Of:</label>
+        <input type="text" id="floor_out_of" name="floor_out_of" required><br><br>
+        
+        <button type="submit" class="btn btn-primary px-5">Calculate Price</button>
+      </form>
+      
+      <h2>Predicted Price: <span id="predicted_price"></span></h2>
+    </div>
+  </body>
+</html>
