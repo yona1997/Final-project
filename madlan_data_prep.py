@@ -7,12 +7,11 @@ import string
 
 path = "output_all_students_Train_v10.xlsx"
 data = pd.read_excel(path)
-
 def price(data):
     data['price'] = data['price'].astype(str).apply(lambda x: re.findall('[0-9]+', x))
     data['price'] = data['price'].apply(lambda x: ''.join(x))
     data['price'] = pd.to_numeric(data['price'], errors='coerce')
-    data = ddataf.dropna(subset=['price'])
+    data = data.dropna(subset=['price'])
 
 def room_number(data):
     data['room_number'] = data['room_number'].apply(lambda x: str(x).replace('חד׳', ''))
